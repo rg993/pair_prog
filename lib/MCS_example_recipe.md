@@ -2,9 +2,27 @@
 
 ## 1. Describe the Problem
 
-_Put or write the user story here. Add any clarifying notes you might have._
+As a car owner
+So that I can keep a record of details about my tyres
+I want to keep track of the tyres individually, by their position on my car
+
+As a car owner
+So that I have the two important pieces of data for a tyre
+I want to be able to record both tyre pressure and tyre tread depth
+
+As a car owner
+So that I have a history of tyre readings
+I want to be able to keep a record of historical readings, when those were, as well as current readings
+
+As a car owner
+So that I can see the details of my car at a glance
+I want to list the tyres' positions, latest readings and when those were
+
 
 ## 2. Design the Class System
+
+nouns: car, tyre, position, pressure, historical readings, current readings, 
+verbs: add pressure, add tread depth, list tyre positions, list dates, list tyre pressures
 
 _Consider diagramming out the classes and their relationships. Take care to
 focus on the details you see as important, not everything. The diagram below
@@ -12,9 +30,10 @@ uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
 
 ```
 ┌────────────────────────────┐
-│ MusicPlayer                │
-│                            │
-│ - tracks                   │
+│ car                        │
+│ 
+                             │
+│ - tyre readings  (list of dictionaries) (pressure, tread depth)                  │
 │ - add(track)               │
 │ - search_by_title(keyword) │
 │   => [tracks...]           │
@@ -23,10 +42,10 @@ uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
             │ owns a list of
             ▼
 ┌─────────────────────────┐
-│ Track(title, artist)    │
+│ Tyre.                   │
 │                         │
-│ - title                 │
-│ - artist                │
+│ - position              │
+│ - pressure, tread depth │
 │ - format()              │
 │   => "TITLE by ARTIST"  │
 └─────────────────────────┘
